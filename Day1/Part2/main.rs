@@ -2,7 +2,7 @@ use std::fs;
 
 fn main() {
     let input = fs::read_to_string("input.prod").expect("Failed to read input");
-    let lines = input.split("\n");
+    let lines = input.split('\n');
     let mut left_list = Vec::new();
     let mut right_list = Vec::new();
     for line in lines {

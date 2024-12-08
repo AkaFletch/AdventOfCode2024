@@ -11,7 +11,7 @@ fn main() {
     println!("Day 2 Part 1");
     let input = fs::read_to_string("input.prod").expect("Failed to read input");
     let mut safe_report = 0;
-    'report: for report in input.split("\n") {
+    'report: for report in input.split('\n') {
         if report.is_empty() {
             continue;
         }
@@ -24,9 +24,9 @@ fn main() {
         let mut dif: i32;
         let mut diff_check: bool;
         for (i, level) in list.iter().enumerate() {
-            let index_direction = (i, dir.clone());
+            let index_direction = (i, dir);
             dif = (last - *level).abs();
-            diff_check = dif < 1 || dif > 3;
+            diff_check = (1..=3).contains(&dif);
             match index_direction {
                 (_, Direction::Increasing) => {
                     if last >= *level || diff_check {
